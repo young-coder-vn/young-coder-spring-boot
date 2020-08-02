@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/qr-api/qr-api.iml" filepath="$PROJECT_DIR$/qr-api/qr-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-backend/qr-backend.iml" filepath="$PROJECT_DIR$/qr-backend/qr-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-commons/qr-commons.iml" filepath="$PROJECT_DIR$/qr-commons/qr-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-core/qr-core.iml" filepath="$PROJECT_DIR$/qr-core/qr-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-frontend/qr-frontend.iml" filepath="$PROJECT_DIR$/qr-frontend/qr-frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-mobile/qr-mobile.iml" filepath="$PROJECT_DIR$/qr-mobile/qr-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-test/qr-test.iml" filepath="$PROJECT_DIR$/qr-test/qr-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-test/spring-profiles/spring-profiles.iml" filepath="$PROJECT_DIR$/qr-test/spring-profiles/spring-profiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/young-coder-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/young-coder-spring-boot.iml" />
+    </modules>
+  </component>
+</project>

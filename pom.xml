@@ -33,7 +33,13 @@
     </developers>
 
     <modules>
-        <module>Test</module>
+        <module>qr-commons</module>
+        <module>qr-core</module>
+        <module>qr-api</module>
+        <module>qr-backend</module>
+        <module>qr-frontend</module>
+        <module>qr-mobile</module>
+        <module>qr-test</module>
     </modules>
 
     <properties>
