@@ -1,0 +1,17 @@
+spring:
+  profiles: default
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+          batch_versioned_data: true
+    hibernate:
+      ddl-auto: none
+---
+spring:
+  profiles: vnpay
+  redis:
+    port: 6379
+    host: 10.22.7.122
+    password: Vnpay@123

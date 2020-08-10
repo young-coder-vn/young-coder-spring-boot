@@ -1,0 +1,23 @@
+spring:
+  banner:
+    location: banner.txt
+  application:
+    name: configserver
+  profiles:
+    active: native,dev
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+          version: 01
+        bootstrap: true
+      label: Nguyễn Hưng
+  devtools:
+    add-properties: false
+    livereload:
+      enabled: true
+    restart:
+      additional-paths: /config
+server:
+  port: 8000

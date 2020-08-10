@@ -1,5 +1,6 @@
 package com.young.coder.config.cloud.client;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,15 +25,18 @@ public class InfoRestController {
     @Value("${message2:Data Null}")
     private String message2;
 
+    @Autowired
+    private RedisConfig redisConfig;
+
     @RequestMapping("/info")
     Object getMessage() {
-        Map<String, String>  data = new HashMap<String, String>();
+        Map<String, String> data = new HashMap<String, String>();
         data.put("db.name", dbName);
         data.put("db.username", dbUsername);
         data.put("db.password", dbPassword);
         data.put("message1", message1);
         data.put("message2", message2);
-
+        data.put("host", redisConfig.getHost());
         return data;
     }
 }
