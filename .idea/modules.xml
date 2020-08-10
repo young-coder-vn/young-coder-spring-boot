@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/qr-frontend/qr-frontend.iml" filepath="$PROJECT_DIR$/qr-frontend/qr-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/qr-mobile/qr-mobile.iml" filepath="$PROJECT_DIR$/qr-mobile/qr-mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/qr-test/qr-test.iml" filepath="$PROJECT_DIR$/qr-test/qr-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-test/cloud-config-client/spring-cloud-config-client.iml" filepath="$PROJECT_DIR$/qr-test/cloud-config-client/spring-cloud-config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qr-commons/cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/qr-commons/cloud-config-server/spring-cloud-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/qr-test/spring-profiles/spring-profiles.iml" filepath="$PROJECT_DIR$/qr-test/spring-profiles/spring-profiles.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/young-coder-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/young-coder-spring-boot.iml" />
     </modules>

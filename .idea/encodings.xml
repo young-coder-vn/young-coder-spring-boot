@@ -4,10 +4,12 @@
     <file url="file://$PROJECT_DIR$/qr-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-backend" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qr-commons/cloud-config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-frontend" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-mobile" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qr-test/cloud-config-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qr-test/spring-profiles" charset="UTF-8" />
   </component>
 </project>

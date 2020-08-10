@@ -14,6 +14,7 @@
     <groupId>com.young.coder</groupId>
     <artifactId>qr-mobile</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
 
 </project>
