@@ -1,0 +1,13 @@
+spring:
+  profiles: local
+  cloud:
+    config:
+      uri: http://10.22.7.121:8000
+      name: Service1
+      profile: default,dev,vnpay
+  application:
+    name: clientService
+---
+
+spring:
+  profiles: vnpay
