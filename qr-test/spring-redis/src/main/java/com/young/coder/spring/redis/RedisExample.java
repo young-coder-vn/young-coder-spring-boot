@@ -28,22 +28,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class RedisExample implements CommandLineRunner {
     @Autowired
-    private RedisTemplate template;
+    private RedisTemplate<String, Object> template;
 
     @Override
     public void run(String... args) throws Exception {
         listExample();
     }
 
-    public void valueExample(){
+    public void valueExample() {
         // Set giá trị của key "loda" là "hello redis"
-        template.opsForValue().set("loda","hello world");
+        template.opsForValue().set("loda", "hello world");
 
         // In ra màn hình Giá trị của key "loda" trong Redis
-        System.out.println("Value of key loda: "+template.opsForValue().get("loda"));
+        System.out.println("Value of key loda: " + template.opsForValue().get("loda"));
     }
 
-    public void listExample(){
+    public void listExample() {
         // Tạo ra một list gồm 2 phần tử
         List<String> list = new ArrayList<>();
         list.add("Hello");
@@ -53,6 +53,11 @@ public class RedisExample implements CommandLineRunner {
         template.opsForList().rightPushAll("loda_list", list);
 //        template.opsForList().rightPushAll("loda_list", "hello", "world");
 
-        System.out.println("Size of key loda: "+template.opsForList().size("loda_list"));
+        System.out.println("Size of key loda: " + template.opsForList().size("loda_list"));
+
+
+        template.opsForValue().set("hungnv", "hungnv");
+        String a = (String) template.opsForValue().get("hungnv");
+        System.out.println(a);
     }
 }

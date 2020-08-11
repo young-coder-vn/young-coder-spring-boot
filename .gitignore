@@ -24,3 +24,5 @@ hs_err_pid*
 qr-commons/cloud-config-server/target/
 qr-test/spring-profiles/target/
 qr-test/cloud-config-client/target/
+.idea/
+qr-test/spring-reactive-redis/target/

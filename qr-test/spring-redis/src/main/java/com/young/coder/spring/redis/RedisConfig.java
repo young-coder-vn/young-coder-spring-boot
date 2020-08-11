@@ -17,6 +17,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.*;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,23 +62,23 @@ public class RedisConfig {
     @Bean
     @Primary
     public RedisConnectionFactory lettuceConnectionFactory() {
-        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration()
-                .master("redismaster")
-                .sentinel("10.22.7.111", 26379)
-                .sentinel("10.22.7.112", 26379)
-                ;
-//        RedisStandaloneConfiguration sentinelConfig = new RedisStandaloneConfiguration("10.22.7.112", 6379);
+//        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration().master("redismaster").sentinel("10.22.7.111", 26379).sentinel("10.22.7.112", 26379);
+        RedisStandaloneConfiguration sentinelConfig = new RedisStandaloneConfiguration("10.22.7.111", 6379);
         sentinelConfig.setPassword("testredis@123");
         sentinelConfig.setDatabase(11);
-        LettuceConnectionFactory lettuceConnectionFactory =  new LettuceConnectionFactory(sentinelConfig);
-        lettuceConnectionFactory.sha
+        LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(sentinelConfig);
         return lettuceConnectionFactory;
     }
 
     @Bean
     @Primary
-    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+        template.setValueSerializer(serializer);
+        template.setHashKeySerializer(serializer);
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setHashKeySerializer(new StringRedisSerializer());
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
