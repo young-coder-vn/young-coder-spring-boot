@@ -63,10 +63,11 @@ public class RedisConfig {
     @Primary
     public RedisConnectionFactory lettuceConnectionFactory() {
 //        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration().master("redismaster").sentinel("10.22.7.111", 26379).sentinel("10.22.7.112", 26379);
-        RedisStandaloneConfiguration sentinelConfig = new RedisStandaloneConfiguration("10.22.7.111", 6379);
-        sentinelConfig.setPassword("testredis@123");
+        RedisStandaloneConfiguration sentinelConfig = new RedisStandaloneConfiguration("10.22.7.123", 6379);
+//        sentinelConfig.setPassword("testredis@123");
         sentinelConfig.setDatabase(11);
         LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(sentinelConfig);
+        lettuceConnectionFactory.setDatabase(11);
         return lettuceConnectionFactory;
     }
 
