@@ -9,7 +9,7 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/config
+          search-locations: classpath:/config, classpath:/config/test
           version: 01
         bootstrap: true
       label: Nguyễn Hưng
@@ -18,6 +18,6 @@ spring:
     livereload:
       enabled: true
     restart:
-      additional-paths: /config
+      additional-paths: /config, /config/test
 server:
   port: 8000

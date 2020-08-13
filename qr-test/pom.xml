@@ -13,13 +13,16 @@
 
     <groupId>com.young.coder</groupId>
     <artifactId>qr-test</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>spring-profiles</module>
         <module>spring-reactive-redis</module>
         <module>cloud-config-client</module>
         <module>spring-redis</module>
+        <module>spring-reactive-database</module>
+        <module>eureka-client</module>
+        <module>eureka-service</module>
     </modules>
 
 

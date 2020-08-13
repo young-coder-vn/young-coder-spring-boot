@@ -2,7 +2,6 @@ package hello;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
 import org.springframework.data.redis.core.ReactiveHashOperations;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.data.redis.core.ReactiveValueOperations;
@@ -14,6 +13,7 @@ import reactor.core.scheduler.Schedulers;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Stream;
 
 @RestController
 public class CoffeeController {
@@ -38,7 +38,8 @@ public class CoffeeController {
         ReactiveValueOperations<String, String> valueOps = reactiveRedisTemplate.opsForValue();
         ReactiveHashOperations<String, String, String> hashOperations = reactiveRedisTemplate.opsForHash();
 
-//        valueOps.set("hungv: " + UUID.randomUUID().toString(), UUID.randomUUID().toString()).subscribe();
+        valueOps.set("hungv: " + UUID.randomUUID().toString(), UUID.randomUUID().toString())
+                .subscribe();// phải có subcribe thì các lệnh mới được thực thi
         return reactiveRedisTemplate.keys("*")
                 .subscribeOn(Schedulers.elastic())
                 .flatMap(reactiveRedisTemplate.opsForValue()::get)
