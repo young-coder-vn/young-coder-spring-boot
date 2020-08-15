@@ -6,6 +6,9 @@ spring:
   profiles:
     active: native,dev
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     config:
       server:
         native:
@@ -21,3 +24,16 @@ spring:
       additional-paths: /config, /config/test
 server:
   port: 8000
+
+eureka:
+  instance:
+    hostname: youngcoder.com
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 60
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false

@@ -26,3 +26,4 @@ qr-test/spring-profiles/target/
 qr-test/cloud-config-client/target/
 .idea/
 qr-test/spring-reactive-redis/target/
+*.iml
